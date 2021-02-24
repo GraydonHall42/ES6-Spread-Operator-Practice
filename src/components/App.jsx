@@ -1,19 +1,22 @@
 import React from "react";
 
 function App() {
-  const [item, setItem] = React.useState("");
-  const [list, setList] = React.useState([]);
+  //create our state variables
+  const [item, setItem] = React.useState(""); //state variable for list item
+  const [list, setList] = React.useState([]); //variable for toDo list
 
+  //change item state variable
   function createNewItem() {
     const newItem = event.target.value;
     setItem(newItem);
   }
 
+  //Add item to our toDoList
   function addItemToList() {
     setList((prevList) => {
       return [...prevList, item];
     });
-    setItem("");
+    setItem(""); //reset item
   }
 
   return (
